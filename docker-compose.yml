@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: team_task_mongo
+    restart: always
+    volumes:
+      - mongo_data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: team_task_backend
+    restart: always
+    ports:
+      - "4000:4000"
+    env_file:
+      - backend/.env
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: team_task_frontend
+    restart: always
+    ports:
+      - "4001:4001"
+    env_file:
+      - frontend/.env
+    depends_on:
+      - backend
+
+volumes:
+  mongo_data:
