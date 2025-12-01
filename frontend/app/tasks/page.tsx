@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { apiAuth } from "@/lib";
+import { apiAuth } from "@/lib/api";
 import { useAuth } from "../../context/AuthContext";
 
 type Task = {

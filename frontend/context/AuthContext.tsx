@@ -1,6 +1,6 @@
 "use client";
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
-import { api } from "@/lib";
+import { api } from "@/lib/api";
 
 type User = {
   _id: string;

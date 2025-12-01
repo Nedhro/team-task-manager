@@ -10,6 +10,6 @@ async function bootstrap() {
     origin: process.env.FRONTEND_ORIGIN || 'http://localhost:4001',
     credentials: true
   });
-  await app.listen(process.env.PORT || 4001);
+  await app.listen(process.env.PORT || 4000);
 }
 bootstrap();
